@@ -2,19 +2,21 @@
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <head>
     <title>Meine Küste, Mein Meer, Mein Hobby</title>
     <style type="text/css">body{margin:40px
 auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
-10px}h1,h2,h3{line-height:1.2},h2,p { margin: 0; }</style>  
+10px}h1,h2,h3{line-height:1.2},h2,p { margin: 0; }</style>
+    <link href='/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+
   </head>
-  
+
   <body>
     <header>
       <h1>Wolfhart H. H. Mücke</h1>
       Mein Name ist Wolfhart Mücke, ich komme aus Cuxhaven und male leidenschaftlich Aquarell.
-    </header> 
+    </header>
     <h2>
       Handgemalte Aquarelle
     </h2>
@@ -24,14 +26,32 @@ auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
       Ich male ausschließlich auf hochwertigen Aquarellkarton und nutze zumeist Aquarellfarben von Schmincke.
       <!-- <br/> --->
       Meine Motive sind hauptsächlich maritim und lokal, zum Beispiel die Kugelbake, die Elbe I und Leuchtfeuer wie etwa die Dicke Berta.
-    </p>   
+    </p>
+    <div class="container">
+    <div class="gallery">
     <h2>
       Wo ich zu finden bin
     </h2>
     <p>
-      Bei gutem Wetter und angenehmen Temperaturen male ich vor der Alten Liebe direkt im Hafen von Cuxhaven.
+      Bei gutem Wetter und angenehmen Temperaturen <a href="/images/whhm_01.jpg">male ich</a> vor der Alten Liebe direkt im Hafen von Cuxhaven.
       <!-- <br/> --->
-      In der Weihnachtszeit 2017 bin ich ebenfalls mit einem Stand auf dem <a href="/28331514243308201.jpg">Weihnachtsmarkt am Schloss Ritzebüttel</a> vertreten gewesen (<a href="37581515001913733.jpg">1</a>, <a href="37621515003108452.jpg">2</a>). 
+      In der Weihnachtszeit bin ich ebenfalls mit einem Stand auf dem <a href="/images/whhm_09.jpg">Weihnachtsmarkt am Schloss Ritzebüttel</a> vertreten (<a href="/images/whhm_10.jpg">1</a>, <a href="/images/whhm_11.jpg">2</a>).
+    </p>
+    <h2>
+      Weitere Impressionen
+    </h2>
+    <p>
+      <!-- siehe https://github.com/andreknieriem/simplelightbox -->
+
+			<a href="images/whhm_02.jpg"><img src="images/thumbs/whhm_02_tn.jpg" alt="" title=""/></a>
+			<a href="images/whhm_03.jpg"><img src="images/thumbs/whhm_03_tn.jpg" alt="" title=""/></a>
+			<a href="images/whhm_04.jpg"><img src="images/thumbs/whhm_04_tn.jpg" alt="" title=""/></a>
+
+      <a href="images/whhm_06.jpg"><img src="images/thumbs/whhm_06_tn.jpg" alt="" title=""/></a>
+      <a href="images/whhm_07.jpg"><img src="images/thumbs/whhm_07_tn.jpg" alt="" title=""/></a>
+
+    </div>
+    </div>
     </p>
     <hr>
     <h2>Kontakt</h2>
@@ -41,12 +61,61 @@ auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
       Telefon: <a href="tel:+4947216669106">04721-6669106</a>
       <br/>
       Mail: <a href="mailto:wolfhart.muecke@ewe.net">wolfhart.muecke@ewe.net</a>
-    </p>   
+    </p>
     <blockquote>
       Meine Küste, mein Meer, mein Hobby.
-    </blockquote>  
+    </blockquote>
     <br/>
-    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/simple-lightbox.min.js"></script>
+    <script>
+    	$(function(){
+    		var $gallery = $('.gallery a').simpleLightbox();
+    		$gallery.on('show.simplelightbox', function(){
+    			console.log('Requested for showing');
+    		})
+    		.on('shown.simplelightbox', function(){
+    			console.log('Shown');
+    		})
+    		.on('close.simplelightbox', function(){
+    			console.log('Requested for closing');
+    		})
+    		.on('closed.simplelightbox', function(){
+    			console.log('Closed');
+    		})
+    		.on('change.simplelightbox', function(){
+    			console.log('Requested for change');
+    		})
+    		.on('next.simplelightbox', function(){
+    			console.log('Requested for next');
+    		})
+    		.on('prev.simplelightbox', function(){
+    			console.log('Requested for prev');
+    		})
+    		.on('nextImageLoaded.simplelightbox', function(){
+    			console.log('Next image loaded');
+    		})
+    		.on('prevImageLoaded.simplelightbox', function(){
+    			console.log('Prev image loaded');
+    		})
+    		.on('changed.simplelightbox', function(){
+    			console.log('Image changed');
+    		})
+    		.on('nextDone.simplelightbox', function(){
+    			console.log('Image changed to next');
+    		})
+    		.on('prevDone.simplelightbox', function(){
+    			console.log('Image changed to prev');
+    		})
+    		.on('error.simplelightbox', function(e){
+    			console.log('No image found, go to the next/prev');
+    			console.log(e);
+    		});
+    	});
+    </script>
+
   </body>
   <a href=/datenschutz style='font-size:11px;color:#a8a8a8;text-align=center'>Datenschutzerklärung</a>
 </html>
